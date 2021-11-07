@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>1. Index</title>
+    <link rel="stylesheet" type="text/css" href="/static/index_hj.css">
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+</head>
+
+<body>
+    <h1>2021 Capstone Design</h1>
+        
+    <!--description-->
+    <h3>Image Conversion by CycleGAN with Image Resolution Enhancement</h3>
+
+    <!--conversion button & example image-->
+    <div>
+        <div>
+            <div class="div_kinds">
+                <p>Day <-> Night</p>
+                <div>
+                    <img src="/static/dn.png" alt="오류">
+                </div>
+            </div>
+            
+            <div class="div_kinds">
+                <p>Spring <-> Autumn</p>
+                <div>
+                    <img src="/static/sa1.png" alt="오류">
+                </div>
+            </div>
+    
+            <div class="div_kinds">
+                <p>Summer <-> Winter</p>
+                <div>
+                    <img src="/static/sw.png" alt="오류">
+                </div>
+            </div>
+        </div>
+        
+        <!--upload button-->
+        <div id="div_upload">
+            <a id="a_normal" href="upload">>>> START</a>
+        </div>
+    </div>
+      
+    <!--footer-->
+    <footer>
+        <h4>BY JIWONKIM, HAEJUNGJNG</h4>
+    </footer>
+    
+</body>
+</html>
+

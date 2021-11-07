@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>3.2 Blur</title>
+    <link rel="stylesheet" href="/static/blur_hj.css" type="text/css">
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+  </head>
+
+  <body>
+    <h1>MOVE CURSUR ON IT</h1>
+  	
+    <div>
+      <div id="image">
+        <img src="/static/image/result.jpg">
+	    </div>
+    </div>
+    
+    <div id="capture">
+      <canvas id="saveCanvas"></canvas>
+      <p>
+          <a href="" id="download" class="a_blue">Download</a>
+          <a href="/upload" class="a_red">Return</a>
+      </p>
+    </div>
+
+    <script src="http://code.jquery.com/jquery-latest.js"></script> 
+    <script type="text/javascript">
+        // save
+        var canvas2 = document.getElementById('saveCanvas');
+            var ctx2 = saveCanvas.getContext('2d');
+            var img2 = new Image;
+            var src2 = '/static/image/result.jpg';
+            img2.src = src2;
+            img2.crossOrigin = 'Anonymous';
+            img2.onload = function() {
+                canvas2.width = this.width;
+                canvas2.height = this.height;
+                ctx2.drawImage(img2, 0, 0);
+                console.log(canvas2.toDataURL());
+            }
+
+            function saveAs(uri, filename){
+                 var link = document.createElement('a'); 
+                 if (typeof link.download === 'string') { 
+                     link.href = uri; 
+                     link.download = filename; //Firefox requires the link to be in the body 
+                     document.body.appendChild(link); //simulate click 
+                     link.click(); //remove the link when done 
+                     document.body.removeChild(link); 
+                    } else { 
+                        window.open(uri); 
+                    } 
+            };
+
+            document.querySelector('a').addEventListener('click', event =>
+                saveAs(canvas2.toDataURL(), "cyclegan.jpg"),
+            );
+    </script> 
+       
+  </body>
+</html>

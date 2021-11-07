@@ -1,0 +1,24 @@
+{% extends 'pages/base.html' %}
+
+{% block content %}
+
+<center>
+<h2> Image Upload </h2>
+
+<br>
+<br>
+<br>
+
+<div id="alert-box"></div>
+<div id="image-box" class="mb-3"></div>
+
+<form action="" id="image-form">
+    {% csrf_token %}
+    {{form.as_p}}
+</form>
+
+<!-- <p>Upload your image</p> -->
+<button class="btn btn-primary mt-3 not-visible" id="confirm-btn">Upload</button>
+<!-- <button class="btn btn-primary mt-3" type = "button" onclick="location.href='/select' ">Translation</button> -->
+
+{% endblock content %}

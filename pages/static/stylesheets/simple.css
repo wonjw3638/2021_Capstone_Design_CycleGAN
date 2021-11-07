@@ -1,0 +1,44 @@
+html, body {
+  background: #fff;
+  color: #fff;
+  height: 300vh;
+}
+
+.content {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0;
+  max-width: 100%;
+  width: 100vw;
+}
+
+div {
+  background: #333;
+  font-size: 38px;
+  font-weight: bold;
+  height: 300px;
+  line-height: 300px;
+  margin: 1em;
+  text-align: center;
+  width: 300px;
+}
+
+.one {
+  background-color: #EC368D;
+}
+
+.two {
+  background-color: #333;
+}
+
+.three {
+  background-color: #440381;
+}

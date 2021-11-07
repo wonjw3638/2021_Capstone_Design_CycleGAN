@@ -1,0 +1,15 @@
+{% extends 'pages/index.html' %}
+
+{% block content %}
+    <center>
+
+    <h2>Upload image</h2>
+    
+    <form method='post' enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form}}
+        {{trans}}
+        <button type="submit"> Upload </button>
+    </form>
+    
+{% endblock %}

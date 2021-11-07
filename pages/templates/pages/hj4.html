@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>test</title>
+    {% comment %} <link rel="stylesheet" href="hj3.css" type="text/css"> {% endcomment %}
+  </head>
+
+  <body>
+  	<div id="image">
+      <p>마우스 드래그로 그림을 그려보세요.
+        <a href="" download="my_painting.png">다운로드</a>
+      </p>
+      <canvas width="300" height="300"></canvas>
+	</div>
+    <script src="http://code.jquery.com/jquery-latest.js"></script> 
+    <script type="text/javascript">
+        
+        var canvas = document.querySelector('canvas'),
+        c = canvas.getContext('2d');
+        c.fillStyle = 'hotpink'; 
+
+        function draw(x, y) {
+          if (isDrawing) {
+            c.beginPath();
+            c.arc(x, y, 10, 0, Math.PI*2);
+            c.closePath();
+            c.fill();
+          }
+        }
+
+        canvas.addEventListener('mousemove', event =>
+          draw(event.offsetX, event.offsetY)
+        );
+        canvas.addEventListener('mousedown', () => isDrawing = true);
+        canvas.addEventListener('mouseup', () => isDrawing = false);
+
+        document.querySelector('a').addEventListener('click', event =>
+          event.target.href = canvas.toDataURL()
+        );
+        
+    </script>
+  </body>
+</html>

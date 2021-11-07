@@ -1,0 +1,89 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{% block title %}test{% endblock%}</title>
+    <link rel="stylesheet" href="/static/hj1.css" type="text/css">
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+</head>
+
+<body>
+    {% block content %}
+
+        <center>
+        <!--head-->
+        <h1>SCRATCH</h1>
+        
+        <div class="box">
+            <canvas id="canvas"></canvas>
+        </div>
+
+        <div>
+            <script>
+                var src = '/Users/BTLsub/realsite/media/1/원본.jpg';
+                var canvas = document.getElementById('canvas');
+                var ctx = canvas.getContext('2d');
+                var img = new Image();
+
+                img.src = src;
+                img.onload = function () {  // 이미지 로딩 완료 시 실행
+                    var width = Math.min(500, img.width);
+                    var height = Math.min(500, img.height);
+                    // var height = img.height * (width / img.width);
+
+                    var width = 256;
+                    var height = 256;
+
+                    canvas.width = width;
+                    canvas.height = height;
+
+                    ctx.drawImage(img, 0, 0, width, height);
+                };
+
+                var isPress = false;
+                var old = null;
+                
+                // event listener
+                canvas.addEventListener('mousedown', function (e){
+                    isPress = true;
+                    old = {x: e.offsetX, y: e.offsetY};
+                });
+                
+                canvas.addEventListener('mousemove', function (e){
+                    if (isPress) {
+                        var x = e.offsetX;
+                        var y = e.offsetY;
+                        ctx.globalCompositeOperation = 'destination-out'; // 원본과 대상 그림 겹치기  
+
+                        ctx.beginPath();
+                        ctx.arc(x, y, 10, 0, 2 * Math.PI);
+                        ctx.fill();
+
+                        ctx.lineWidth = 40;
+                        ctx.beginPath();
+                        ctx.moveTo(old.x, old.y);
+                        ctx.lineTo(x, y);
+                        ctx.stroke();
+
+                        old = {x: x, y: y};
+                }
+                });
+                
+                canvas.addEventListener('mouseup', function (e){
+                    isPress = false;
+                });
+
+            </script>
+        </div>
+    </center>
+    
+
+    {% endblock %}
+
+</body>
+</html>
+
+

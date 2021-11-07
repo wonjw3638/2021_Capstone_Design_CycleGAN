@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>3.1 Scratch</title>
+    <link rel="stylesheet" href="/static/scratch_hj.css" type="text/css">
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+</head>
+
+<body>
+    <h1>SCRATCH</h1>
+    
+    <div class="box">
+        <canvas id="scratchCanvas"></canvas>
+    </div>
+    
+    <div id="capture">
+        <canvas id="saveCanvas"></canvas>
+        <p>
+            <a href="" id="download" class="a_blue">Download</a>
+            <a href="/upload" class="a_red">Return</a>
+        </p>
+    </div>
+
+    <div>
+        <script src="http://code.jquery.com/jquery-latest.js"></script> 
+        <script>
+            // scratch
+            var src1 = '/static/image/원본.jpg';
+            var canvas1 = document.getElementById('scratchCanvas');
+            var ctx1 = canvas1.getContext('2d');
+            var img1 = new Image();
+            img1.src = src1;
+            img1.onload = function () {  // 이미지 로딩 완료 시 실행
+                var width = Math.min(500, img1.width);
+                var height = Math.min(500, img1.height);
+                // var height = img.height * (width / img.width);
+                var width = 256;
+                var height = 256;
+                canvas1.width = width;
+                canvas1.height = height;
+                ctx1.drawImage(img1, 0, 0, width, height);
+            };
+            var isPress = false;
+            var old = null;
+            
+            // event listener
+            canvas1.addEventListener('mousedown', function (e){
+                isPress = true;
+                old = {x: e.offsetX, y: e.offsetY};
+            });
+            
+            canvas1.addEventListener('mousemove', function (e){
+                if (isPress) {
+                    var x = e.offsetX;
+                    var y = e.offsetY;
+                    ctx1.globalCompositeOperation = 'destination-out'; // 원본과 대상 그림 겹치기  
+                    ctx1.beginPath();
+                    ctx1.arc(x, y, 10, 0, 2 * Math.PI);
+                    ctx1.fill();
+                    ctx1.lineWidth = 40;
+                    ctx1.beginPath();
+                    ctx1.moveTo(old.x, old.y);
+                    ctx1.lineTo(x, y);
+                    ctx1.stroke();
+                    old = {x: x, y: y};
+            }
+            });
+            
+            canvas1.addEventListener('mouseup', function (e){
+                isPress = false;
+            });
+
+            // save
+            var canvas2 = document.getElementById('saveCanvas');
+            var ctx2 = saveCanvas.getContext('2d');
+            var img2 = new Image;
+            var src2 = '/static/image/result.jpg';
+            img2.src = src2;
+            img2.crossOrigin = 'Anonymous';
+            img2.onload = function() {
+                canvas2.width = this.width;
+                canvas2.height = this.height;
+                ctx2.drawImage(img2, 0, 0);
+                console.log(canvas2.toDataURL());
+            }
+
+            function saveAs(uri, filename){
+                 var link = document.createElement('a'); 
+                 if (typeof link.download === 'string') { 
+                     link.href = uri; 
+                     link.download = filename; //Firefox requires the link to be in the body 
+                     document.body.appendChild(link); //simulate click 
+                     link.click(); //remove the link when done 
+                     document.body.removeChild(link); 
+                    } else { 
+                        window.open(uri); 
+                    } 
+            };
+
+            document.querySelector('a').addEventListener('click', event =>
+                saveAs(canvas2.toDataURL(), "cyclegan.jpg"),
+            );
+        </script>
+    </div>
+</body>
+</html>

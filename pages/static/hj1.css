@@ -1,0 +1,10 @@
+.box {
+    display: inline-block;
+    background: url("/media/1/final_result_1.jpg");
+    background-size: cover;
+  }
+canvas {
+    background: transparent;
+  }
+
+  

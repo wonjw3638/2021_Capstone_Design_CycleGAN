@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>2. Upload & Crop & ModelSelection</title>
+    <link rel="stylesheet" href="/static/upload_hj.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+</head>
+
+<body>
+    <h1>Setting</h1>
+    <div>    
+    <img src = "/static/image/원본.jpg" width = "300">
+    </div>
+
+    <h3>Select Model</h3>
+    <div>
+        <label for="type-select">Choose the type of input.</label>
+        <br>
+        <select name="types" id="type-select" onchange="pass_select_value(this);">
+            <option value="">--Please choose an option--</option>
+            <option value="day">Day</option>
+            <option value="night">Night</option>
+            <option value="spring">Spring</option>
+            <option value="summer">Summer</option>
+            <option value="autumn">Autumn</option>
+            <option value="winter">Winter</option>
+        </select>
+
+        <script src="http://code.jquery.com/jquery-latest.js"></script> 
+        <script type="text/javascript">
+            var pass_select_value = function (select_obj){ 
+                var selected_index = select_obj.selectedIndex;  // 우선 selectbox에서 선택된 index를 찾고
+                var selected_value = select_obj.options[selected_index].value;  // 선택된 index의 value를 찾고 
+                if(selected_index == 1){
+                    location.href='/day';
+                }
+                else if(selected_index == 2){
+                    location.href='/night';
+                }
+                else if(selected_index == 3){
+                    location.href='/spring';
+                }
+                else if(selected_index == 4){
+                    location.href='/summer';
+                }
+                else if(selected_index == 5){
+                    location.href='/autumn';
+                }
+                else if(selected_index == 6){
+                    location.href='/winter';
+                }
+                else{
+                alert('Choose the type of input.');
+                }
+            };
+        </script>
+    </div>
+</body>
+</html>
+
+
