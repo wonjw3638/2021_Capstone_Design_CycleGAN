@@ -108,10 +108,8 @@ opencv-python==4.5.2.54
 opt-einsum==3.3.0
 optional-django==0.3.0
 packaging==20.4
-pandas @ file:///C:/ci/pandas_1602083338010/work
 parso==0.7.0
 partd==1.1.0
-path @ file:///C:/ci/path_1598358556930/work
 path.py==12.5.0
 pathlib2==2.3.5
 pathtools==0.1.2
@@ -119,7 +117,6 @@ patsy==0.5.1
 pep8==1.7.1
 pexpect==4.8.0
 pickleshare==0.7.5
-Pillow @ file:///C:/ci/pillow_1603823068645/work
 pkginfo==1.6.1
 pluggy==0.13.1
 plum-py==0.3.1
