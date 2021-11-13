@@ -125,13 +125,10 @@ pyodbc===4.0.1
 pyparsing==2.4.7
 pyreadline==2.1
 PySocks==1.7.1
-pytest==0.0.0
 python-dateutil==2.8.1
 python-editor==1.0.4
 python-magic==0.4.24
 python-magic-bin==0.4.14
-pytz==2020.1
-pywin32==227
 pywin32-ctypes==0.2.0
 pywinpty==0.5.7
 PyYAML==5.3.1
