@@ -1,9 +1,12 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 
 <head>
     <title>1. Index</title>
     <link rel="stylesheet" type="text/css" href="/static/index_hj.css">
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
 </head>
 
 <body>
@@ -11,33 +14,27 @@
         
     <!--description-->
     <h3>Image Conversion by CycleGAN with Image Resolution Enhancement</h3>
-    <p>
-        <br>
-        우리는 CycleGAN을 이용해 이미지의 스타일을 변환해주는 모델을 학습시켰습니다.<br>
-        변환된 이미지는RDN을 통해 화질을 개선하였고, 반응형 웹을 통해 결과 이미지를 제공합니다.<br>
-        아래의 모델을 참고하여 각자의 이미지를 변환해보세요.
-    </p>
-    
+
     <!--conversion button & example image-->
     <div>
         <div>
             <div class="div_kinds">
                 <p>Day <-> Night</p>
-                <div class="div_img">
+                <div>
                     <img src="/static/dn.png" alt="오류">
                 </div>
             </div>
             
             <div class="div_kinds">
                 <p>Spring <-> Autumn</p>
-                <div class="div_img">
+                <div>
                     <img src="/static/sa1.png" alt="오류">
                 </div>
             </div>
     
             <div class="div_kinds">
                 <p>Summer <-> Winter</p>
-                <div class="div_img">
+                <div>
                     <img src="/static/sw.png" alt="오류">
                 </div>
             </div>

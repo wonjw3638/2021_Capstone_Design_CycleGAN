@@ -1,4 +1,4 @@
-h1, h3, p{
+h1, h3, h4, p{
     text-align: center;
 }
 
@@ -7,16 +7,22 @@ p{
 }
 
 img{
-    top: 50%;
-    left: 50%;
-    width: 90%;
+    width: 450px;
     height: auto;
-    margin-left: 5%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .div_kinds{
     float: left;
     width: 33%;
+    text-align: center;
+}
+
+.div_img{
+    /* display: inline-block; */
+    margin: auto;
+    align-items: center;
 }
 
 a{
