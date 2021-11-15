@@ -57,7 +57,6 @@ image==1.5.33
 imagesize==1.2.0
 importlib-resources==5.1.2
 ipython-genutils==0.2.0
-isr==2.5.0
 itsdangerous==1.1.0
 jdcal==1.4.1
 Jinja2==2.11.2
