@@ -151,7 +151,7 @@ tables==3.6.1
 tensorboard==2.5.0
 tensorboard-data-server==0.6.1
 tensorboard-plugin-wit==1.8.0
-tensorflow==2.5.2
+tensorflow==2.2.0
 tensorflow-datasets==4.3.0
 tensorflow-estimator==2.3.0
 tensorflow-examples @ git+https://github.com/tensorflow/examples.git@3732c644f0f3841225726f755bd79514d2ca69fa
