@@ -140,7 +140,6 @@ rsa==4.7.2
 ruamel-yaml==0.15.87
 Send2Trash==1.5.0
 simplegeneric==0.8.1
-sip==4.19.13
 sklearn==0.0
 snowballstemmer==2.0.0
 sortedcollections==1.2.1
@@ -161,7 +160,6 @@ termcolor==1.1.0
 terminado==0.9.1
 testpath==0.4.4
 tfds-nightly==4.3.0.dev202105110107
-tifffile==2020.10.1
 tornado==6.0.4
 unicodecsv==0.14.1
 webencodings==0.5.1

@@ -6,6 +6,13 @@ body {
   background:white;
 }
 
+#capture{
+  position: absolute;
+  top: 200px;
+  left:50%; 
+  transform:translateX(-50%);
+}
+
 #image { 
   width: 256px;
   position: absolute;
@@ -25,13 +32,6 @@ body {
 #image:hover{
   filter:blur(0px);
   -webkit-filter:blur(0px);
-}
-
-#capture{
-  position: absolute;
-  top: 300px;
-  left:50%; 
-  transform:translateX(-50%);
 }
 
 .a_blue{  
@@ -74,4 +74,10 @@ body {
 .a_red:active{
   transform: translateY(3px);
   border-bottom:2px solid #fc6a6a;
+}
+
+#saveCanvas{
+  width: 0%;
+  height: 0%;
+  display: none !important;
 }
