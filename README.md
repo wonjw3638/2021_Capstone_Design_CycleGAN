@@ -151,7 +151,7 @@ __✔ 작성 정보__
 
 **구현 결과 : 겨울 → 여름**
 
-![image](C:\Users\multicampus\Desktop\Jiwon\2021_Capstone_Design_CycleGAN\README.assets\195488648-36aea14b-2455-42f3-b5cf-da96e69e904b.png)
+![image](https://user-images.githubusercontent.com/109324634/195489805-38c625a2-00ba-41f2-9dab-e3a4214059f0.png)
 
 
 
