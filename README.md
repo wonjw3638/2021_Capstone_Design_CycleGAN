@@ -3,7 +3,7 @@
 ## 🚧 수정 예정
 
 - [x] README 수정하기
-- [ ] Modl Form으로 구현하기
+- [ ] Model Form으로 구현하기
 - [ ] Front-End 반응형 웹 페이지 구현하기
 - [ ] Front-End 디자인 요소 넣기
 - [ ] `get_objects_404` 로 정상적인 값이 들어오지 않은 경우 404반환하기
